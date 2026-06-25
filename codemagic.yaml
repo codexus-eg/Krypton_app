@@ -23,7 +23,7 @@ workflows:
         script: |
           sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]*;/IPHONEOS_DEPLOYMENT_TARGET = 15.0;/g' ios/Runner.xcodeproj/project.pbxproj
 
-      - name: Clean and Reinstall Pods
+      - name: Clean and Get Dependencies
         script: |
           flutter clean
           flutter pub get
@@ -36,9 +36,8 @@ workflows:
 
       - name: Build IPA
         script: |
-          # نستخدم أمر Flutter المباشر، ونخبره أن طريقة التصدير هي app-store
-          # كودماجيك سيقوم تلقائياً بإنشاء ملف export_options.plist المناسب للبروفايل
-          flutter build ipa --release --export-method app-store
+          # التعديل هنا: نستخدم ملف الـ plist الذي أنشأته أداة use-profiles تلقائياً
+          flutter build ipa --release --export-options-plist=$HOME/export_options.plist
 
     artifacts:
       - build/ios/ipa/*.ipa
