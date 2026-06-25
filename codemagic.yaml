@@ -19,23 +19,21 @@ workflows:
           - ios_cert_manual
 
     scripts:
-      scripts:
-        - name: Set iOS deployment target
-          script: |
-            sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]*;/IPHONEOS_DEPLOYMENT_TARGET = 15.0;/g' ios/Runner.xcodeproj/project.pbxproj
+      - name: Set iOS deployment target
+        script: |
+          sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]*;/IPHONEOS_DEPLOYMENT_TARGET = 15.0;/g' ios/Runner.xcodeproj/project.pbxproj
 
-        - name: Clean and Get Dependencies
-          script: |
-            flutter clean
-            flutter pub get
+      - name: Clean and Get Dependencies
+        script: |
+          flutter clean
+          flutter pub get
 
-        - name: Apply Vault Profiles
-          script: xcode-project use-profiles
+      - name: Apply Vault Profiles
+        script: xcode-project use-profiles
 
-        - name: Build IPA
-          script: |
-            flutter build ipa --release --export-options-plist=/Users/builder/export_options.plist
-
+      - name: Build IPA
+        script: |
+          flutter build ipa --release --export-options-plist=/Users/builder/export_options.plist
     artifacts:
       - build/ios/ipa/*.ipa
 
