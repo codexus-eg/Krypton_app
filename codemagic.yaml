@@ -35,8 +35,8 @@ workflows:
 
       - name: Build IPA
         script: |
-          # نستخدم أمر كودماجيك الخاص لبناء الـ IPA، وهو أكثر دقة في تطبيق الـ Provisioning Profiles
-          xcode-project build-ipa --target Runner --scheme Runner
+          # هنا التعديل: إضافة مسار الـ workspace
+          xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner
 
     artifacts:
       - build/ios/ipa/*.ipa
