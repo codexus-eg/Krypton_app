@@ -35,8 +35,8 @@ workflows:
 
       - name: Build IPA
         script: |
-          # نترك flutter build ipa يقوم بالتعامل مع الإعدادات المطبقة من use-profiles
-          flutter build ipa --release
+          # نحدد هنا --export-method app-store لضمان التوافق مع التست فلاي
+          flutter build ipa --release --export-method app-store
 
     artifacts:
       - build/ios/ipa/*.ipa
