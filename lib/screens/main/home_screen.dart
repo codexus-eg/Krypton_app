@@ -162,12 +162,12 @@ class HomeScreen extends StatelessWidget {
           colors: cubit.isDarkMode
               ? [
                   AppColors.appPrimaryColor,
-                  AppColors.appPrimaryColor.withOpacity(0.8),
-                  AppColors.appSecondaryColor.withOpacity(0.9),
+                  AppColors.appPrimaryColor.withValues(alpha: 0.8),
+                  AppColors.appSecondaryColor.withValues(alpha: 0.9),
                 ]
               : [
                   AppColors.appSecondaryColor,
-                  AppColors.appPrimaryColor.withOpacity(0.9),
+                  AppColors.appPrimaryColor.withValues(alpha: 0.9),
                   AppColors.appPrimaryColor,
                 ],
           begin: Alignment.topLeft,
@@ -176,7 +176,7 @@ class HomeScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(28.0),
         boxShadow: [
           BoxShadow(
-            color: AppColors.appPrimaryColor.withOpacity(0.4),
+            color: AppColors.appPrimaryColor.withValues(alpha: 0.4),
             blurRadius: 20,
             offset: const Offset(0, 8),
             spreadRadius: -4,
@@ -210,12 +210,12 @@ class HomeScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                       width: 2.5,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
+                        color: Colors.black.withValues(alpha: 0.2),
                         blurRadius: 12,
                         offset: const Offset(0, 4),
                       ),
@@ -242,7 +242,7 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         S.of(context).hey,
                         style: AppTextStyles.body2Style.copyWith(
-                          color: Colors.white.withOpacity(0.85),
+                          color: Colors.white.withValues(alpha: 0.85),
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                         ),
@@ -257,7 +257,7 @@ class HomeScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           shadows: [
                             Shadow(
-                              color: Colors.black.withOpacity(0.2),
+                              color: Colors.black.withValues(alpha: 0.2),
                               offset: const Offset(0, 2),
                               blurRadius: 4,
                             ),
@@ -310,12 +310,12 @@ class HomeScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                       width: 2.5,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
+                        color: Colors.black.withValues(alpha: 0.2),
                         blurRadius: 12,
                         offset: const Offset(0, 4),
                       ),
@@ -347,7 +347,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.15),
+                          color: Colors.black.withValues(alpha: 0.15),
                           blurRadius: 4,
                           offset: const Offset(0, 2),
                         ),
@@ -444,7 +444,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.25),
+                          color: Colors.black.withValues(alpha: 0.25),
                           blurRadius: 4,
                           offset: const Offset(0, 2),
                         ),

@@ -6,28 +6,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:karim_online_platform/constants/payment_options.dart';
-import 'package:karim_online_platform/constants/widgets.dart';
 import 'package:karim_online_platform/widgets/app_status_dialog.dart';
-import 'package:parent_child_checkbox/parent_child_checkbox.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 import 'package:karim_online_platform/bloc/platform_cubit.dart';
 import 'package:karim_online_platform/bloc/platform_states.dart';
 import 'package:karim_online_platform/constants/components.dart';
 import 'package:karim_online_platform/generated/l10n.dart';
-import 'package:karim_online_platform/screens/main/lectures_details_details_screen.dart';
 import 'package:karim_online_platform/screens/quiz/quiz_answs_screen.dart';
 import 'package:karim_online_platform/screens/quiz/start_quiz_screen.dart';
 
 import '../../constants/colors.dart';
 import '../../constants/constants.dart';
 import '../../constants/styles.dart';
-import '../../models/question_bank_model.dart';
 import '../../models/quiz_model.dart';
 import '../../models/std_quiz_model.dart';
 import '../../models/user_model.dart';
-import '../questions_bank/questionbank_answs_screen.dart';
-import '../questions_bank/start_questionbank_screen.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});

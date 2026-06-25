@@ -5,13 +5,9 @@ import 'dart:ui';
 
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show Clipboard, ClipboardData;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:karim_online_platform/constants/payment_options.dart';
-import 'package:karim_online_platform/models/payment_model.dart';
 import 'package:karim_online_platform/models/watches_video_model.dart';
-import 'package:karim_online_platform/screens/main/payment_webview_screen.dart';
-import 'package:karim_online_platform/screens/qrscanner/qr_scanner_screen.dart';
 import 'package:karim_online_platform/screens/quiz/start_quiz_screen.dart';
 import 'package:karim_online_platform/widgets/app_status_dialog.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';

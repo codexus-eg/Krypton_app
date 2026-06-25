@@ -23,7 +23,7 @@ class Components {
       900: Color.fromRGBO(red, green, blue, 1),
     };
 
-    return MaterialColor(color.value, shades);
+    return MaterialColor(color.toARGB32(), shades);
   }
 
   static void pushReplacement(

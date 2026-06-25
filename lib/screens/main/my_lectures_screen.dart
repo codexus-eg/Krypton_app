@@ -9,7 +9,6 @@ import 'package:karim_online_platform/models/video_details_model.dart';
 import '../../bloc/platform_cubit.dart';
 import '../../bloc/platform_states.dart';
 import '../../constants/components.dart';
-import '../../constants/constants.dart';
 import '../../constants/styles.dart';
 import '../../generated/l10n.dart';
 import 'lectures_details_details_screen.dart';

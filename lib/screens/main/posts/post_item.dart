@@ -10,7 +10,6 @@ import 'package:karim_online_platform/constants/constants.dart';
 import 'package:karim_online_platform/constants/widgets.dart';
 import 'package:karim_online_platform/generated/l10n.dart';
 import 'package:karim_online_platform/models/comment_model.dart';
-import 'package:karim_online_platform/models/comment_std_data.dart';
 import 'package:karim_online_platform/models/posts_model.dart';
 import 'package:karim_online_platform/models/user_model.dart';
 import 'package:readmore/readmore.dart';

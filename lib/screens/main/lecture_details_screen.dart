@@ -175,8 +175,8 @@ class _VideoDetailsState extends State<VideoDetails>
                     pinned: true,
                     foregroundColor: Colors.white,
                     backgroundColor: cubit.isDarkMode
-                        ? Colors.black.withOpacity(0.9)
-                        : Colors.white.withOpacity(0.95),
+                        ? Colors.black.withValues(alpha: 0.9)
+                        : Colors.white.withValues(alpha: 0.95),
                     elevation: 10.0,
                     title: AnimatedOpacity(
                       opacity: _showTitle ? 1.0 : 0.0,
@@ -209,9 +209,9 @@ class _VideoDetailsState extends State<VideoDetails>
                                   begin: Alignment.topCenter,
                                   end: Alignment.bottomCenter,
                                   colors: [
-                                    Colors.black.withOpacity(0.2),
-                                    Colors.black.withOpacity(0.4),
-                                    Colors.black.withOpacity(0.7),
+                                    Colors.black.withValues(alpha: 0.2),
+                                    Colors.black.withValues(alpha: 0.4),
+                                    Colors.black.withValues(alpha: 0.7),
                                   ],
                                   stops: const [0.0, 0.5, 1.0],
                                 ),
@@ -232,7 +232,8 @@ class _VideoDetailsState extends State<VideoDetails>
                                     borderRadius: BorderRadius.circular(16.0),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Colors.black.withOpacity(0.3),
+                                        color:
+                                            Colors.black.withValues(alpha: 0.3),
                                         spreadRadius: 2,
                                         blurRadius: 15,
                                         offset: const Offset(0, 8),
@@ -262,10 +263,11 @@ class _VideoDetailsState extends State<VideoDetails>
                                     vertical: 8.0,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: Colors.black.withOpacity(0.4),
+                                    color: Colors.black.withValues(alpha: 0.4),
                                     borderRadius: BorderRadius.circular(12.0),
                                     border: Border.all(
-                                      color: Colors.white.withOpacity(0.1),
+                                      color:
+                                          Colors.white.withValues(alpha: 0.1),
                                       width: 1,
                                     ),
                                   ),
@@ -287,8 +289,8 @@ class _VideoDetailsState extends State<VideoDetails>
                                             Shadow(
                                               offset: const Offset(0, 2),
                                               blurRadius: 4,
-                                              color:
-                                                  Colors.black.withOpacity(0.8),
+                                              color: Colors.black
+                                                  .withValues(alpha: 0.8),
                                             ),
                                           ],
                                         ),
@@ -339,13 +341,13 @@ class _VideoDetailsState extends State<VideoDetails>
                             ),
                             decoration: BoxDecoration(
                               color: cubit.isDarkMode
-                                  ? Colors.white.withOpacity(0.05)
-                                  : Colors.white.withOpacity(0.8),
+                                  ? Colors.white.withValues(alpha: 0.05)
+                                  : Colors.white.withValues(alpha: 0.8),
                               borderRadius: BorderRadius.circular(12.0),
                               border: Border.all(
                                 color: cubit.isDarkMode
-                                    ? Colors.white.withOpacity(0.1)
-                                    : Colors.black.withOpacity(0.15),
+                                    ? Colors.white.withValues(alpha: 0.1)
+                                    : Colors.black.withValues(alpha: 0.15),
                                 width: 1,
                               ),
                             ),
@@ -395,13 +397,13 @@ class _VideoDetailsState extends State<VideoDetails>
                               padding: const EdgeInsets.all(24.0),
                               decoration: BoxDecoration(
                                 color: cubit.isDarkMode
-                                    ? Colors.white.withOpacity(0.05)
-                                    : Colors.white.withOpacity(0.8),
+                                    ? Colors.white.withValues(alpha: 0.05)
+                                    : Colors.white.withValues(alpha: 0.8),
                                 borderRadius: BorderRadius.circular(16.0),
                                 border: Border.all(
                                   color: cubit.isDarkMode
-                                      ? Colors.white.withOpacity(0.1)
-                                      : Colors.black.withOpacity(0.05),
+                                      ? Colors.white.withValues(alpha: 0.1)
+                                      : Colors.black.withValues(alpha: 0.05),
                                   width: 1,
                                 ),
                               ),
@@ -524,14 +526,14 @@ class _VideoDetailsState extends State<VideoDetails>
         border: Border(
           top: BorderSide(
             color: cubit.isDarkMode
-                ? Colors.white.withOpacity(0.08)
-                : Colors.black.withOpacity(0.08),
+                ? Colors.white.withValues(alpha: 0.08)
+                : Colors.black.withValues(alpha: 0.08),
             width: 1,
           ),
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.08),
+            color: Colors.black.withValues(alpha: 0.08),
             blurRadius: 16,
             offset: const Offset(0, -4),
           ),

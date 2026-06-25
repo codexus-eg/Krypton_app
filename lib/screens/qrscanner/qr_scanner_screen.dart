@@ -34,7 +34,8 @@ class _QRViewExampleState extends State<QRViewExample> {
                       controller: widget.mobileScannerController,
                       overlayBuilder: (context, constraints) =>
                           QRScannerOverlay(
-                              overlayColour: Colors.black.withOpacity(0.8)),
+                              overlayColour:
+                                  Colors.black.withValues(alpha: 0.8)),
                       onDetect: (capture) {
                         widget.mobileScannerController.dispose();
                         Navigator.pop(context, capture.barcodes[0].rawValue);

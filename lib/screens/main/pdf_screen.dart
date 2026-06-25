@@ -146,7 +146,7 @@ class _PdfScreenState extends State<PdfScreen> {
                 child: Container(
                   padding: const EdgeInsets.all(6.0),
                   decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.4),
+                    color: Colors.grey.withValues(alpha: 0.4),
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: GestureDetector(

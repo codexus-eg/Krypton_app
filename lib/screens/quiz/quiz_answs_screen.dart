@@ -234,7 +234,7 @@ class _QuizAnswersScreenState extends State<QuizAnswersScreen> {
         borderRadius: BorderRadius.circular(20.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.35 : 0.06),
+            color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.06),
             blurRadius: 14.0,
             offset: const Offset(0, 6),
           ),
@@ -381,10 +381,10 @@ class _QuizAnswersScreenState extends State<QuizAnswersScreen> {
         duration: const Duration(milliseconds: 200),
         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 6.0),
         decoration: BoxDecoration(
-          color: active ? color : color.withOpacity(0.12),
+          color: active ? color : color.withValues(alpha: 0.12),
           borderRadius: BorderRadius.circular(14.0),
           border: Border.all(
-            color: active ? color : color.withOpacity(0.30),
+            color: active ? color : color.withValues(alpha: 0.30),
             width: 1.4,
           ),
         ),
@@ -478,7 +478,7 @@ class BuildQuizAnsItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(20.0),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(isDarkMode ? 0.35 : 0.06),
+                color: Colors.black.withValues(alpha: isDarkMode ? 0.35 : 0.06),
                 blurRadius: 14.0,
                 offset: const Offset(0, 6),
               ),
@@ -586,7 +586,7 @@ class BuildQuizAnsItem extends StatelessWidget {
                                 vertical: 4.0,
                               ),
                               decoration: BoxDecoration(
-                                color: Colors.black.withOpacity(0.6),
+                                color: Colors.black.withValues(alpha: 0.6),
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
                               child: Row(
@@ -702,7 +702,7 @@ class BuildQuizAnsItem extends StatelessWidget {
                                     vertical: 4.0,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: Colors.black.withOpacity(0.6),
+                                    color: Colors.black.withValues(alpha: 0.6),
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
                                   child: Row(
@@ -752,9 +752,9 @@ class BuildQuizAnsItem extends StatelessWidget {
         vertical: 5.0,
       ),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.12),
+        color: color.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(10.0),
-        border: Border.all(color: color.withOpacity(0.35), width: 1.0),
+        border: Border.all(color: color.withValues(alpha: 0.35), width: 1.0),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -792,14 +792,14 @@ class BuildQuizAnsItem extends StatelessWidget {
     final Color idleBg =
         isDarkMode ? AppColors.darkBgColor : AppColors.lightBgColor;
     final Color idleBorder = isDarkMode
-        ? Colors.white.withOpacity(0.08)
-        : Colors.black.withOpacity(0.06);
+        ? Colors.white.withValues(alpha: 0.08)
+        : Colors.black.withValues(alpha: 0.06);
 
     return Container(
       margin: const EdgeInsets.only(bottom: 10.0),
       padding: const EdgeInsets.all(12.0),
       decoration: BoxDecoration(
-        color: highlighted ? stateColor.withOpacity(0.12) : idleBg,
+        color: highlighted ? stateColor.withValues(alpha: 0.12) : idleBg,
         borderRadius: BorderRadius.circular(14.0),
         border: Border.all(
           color: highlighted ? stateColor : idleBorder,

@@ -57,8 +57,8 @@ class BuildQuizItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(20.0),
               boxShadow: [
                 BoxShadow(
-                  color:
-                      Colors.black.withOpacity(cubit.isDarkMode ? 0.35 : 0.06),
+                  color: Colors.black
+                      .withValues(alpha: cubit.isDarkMode ? 0.35 : 0.06),
                   blurRadius: 14.0,
                   offset: const Offset(0, 6),
                 ),
@@ -168,7 +168,7 @@ class BuildQuizItem extends StatelessWidget {
                               vertical: 4.0,
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.6),
+                              color: Colors.black.withValues(alpha: 0.6),
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Row(
@@ -247,8 +247,8 @@ class BuildQuizItem extends StatelessWidget {
     final Color idleBg =
         cubit.isDarkMode ? AppColors.darkBgColor : AppColors.lightBgColor;
     final Color idleBorder = cubit.isDarkMode
-        ? Colors.white.withOpacity(0.08)
-        : Colors.black.withOpacity(0.06);
+        ? Colors.white.withValues(alpha: 0.08)
+        : Colors.black.withValues(alpha: 0.06);
 
     return GestureDetector(
       onTap: select,
@@ -257,7 +257,7 @@ class BuildQuizItem extends StatelessWidget {
         curve: Curves.easeOut,
         padding: const EdgeInsets.all(12.0),
         decoration: BoxDecoration(
-          color: isSelected ? color.withOpacity(0.12) : idleBg,
+          color: isSelected ? color.withValues(alpha: 0.12) : idleBg,
           borderRadius: BorderRadius.circular(14.0),
           border: Border.all(
             color: isSelected ? color : idleBorder,
@@ -344,9 +344,9 @@ class _InfoChip extends StatelessWidget {
         vertical: 5.0,
       ),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.12),
+        color: color.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(10.0),
-        border: Border.all(color: color.withOpacity(0.35), width: 1.0),
+        border: Border.all(color: color.withValues(alpha: 0.35), width: 1.0),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -512,7 +512,7 @@ class _WrittenAnswerSectionState extends State<WrittenAnswerSection> {
                                   vertical: 4.0,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: Colors.black.withOpacity(0.6),
+                                  color: Colors.black.withValues(alpha: 0.6),
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 child: Row(
@@ -964,9 +964,10 @@ class Widgets {
       margin: const EdgeInsets.fromLTRB(12, 12, 12, 4),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: pendingColor.withOpacity(isDarkMode ? 0.14 : 0.08),
+        color: pendingColor.withValues(alpha: isDarkMode ? 0.14 : 0.08),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: pendingColor.withOpacity(0.45), width: 1.2),
+        border:
+            Border.all(color: pendingColor.withValues(alpha: 0.45), width: 1.2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -977,7 +978,7 @@ class Widgets {
                 width: 46,
                 height: 46,
                 decoration: BoxDecoration(
-                  color: pendingColor.withOpacity(0.18),
+                  color: pendingColor.withValues(alpha: 0.18),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(Icons.hourglass_top_rounded,

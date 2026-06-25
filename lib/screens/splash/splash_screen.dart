@@ -1,14 +1,10 @@
 // ignore_for_file: must_be_immutable
 
-import 'dart:io';
 import 'dart:ui' show ImageFilter;
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:karim_online_platform/constants/colors.dart';
-import 'package:restart_app/restart_app.dart';
 import 'package:upgrader/upgrader.dart';
 import 'package:karim_online_platform/bloc/platform_cubit.dart';
 import 'package:karim_online_platform/bloc/platform_states.dart';
@@ -16,11 +12,9 @@ import 'package:karim_online_platform/constants/components.dart';
 import 'package:karim_online_platform/constants/constants.dart';
 import 'package:karim_online_platform/layout/home_layout.dart';
 import 'package:karim_online_platform/models/user_model.dart';
-import 'package:karim_online_platform/network/local/shared_pref_helper.dart';
 import 'package:karim_online_platform/services/notification_service.dart';
 import 'package:karim_online_platform/screens/auth/login/login_page.dart';
 import 'package:karim_online_platform/screens/main/error_screen.dart';
-import 'package:karim_online_platform/screens/onboarding/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({

@@ -9,7 +9,6 @@ import 'package:karim_online_platform/bloc/platform_states.dart';
 import 'package:karim_online_platform/constants/components.dart';
 
 import '../../../constants/colors.dart';
-import '../../../constants/constants.dart';
 import '../../../constants/styles.dart';
 import '../../../constants/widgets.dart';
 import '../../../generated/l10n.dart';

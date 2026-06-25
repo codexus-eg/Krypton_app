@@ -133,12 +133,12 @@ class ProfileScreen extends StatelessWidget {
           colors: cubit.isDarkMode
               ? [
                   AppColors.appPrimaryColor,
-                  AppColors.appPrimaryColor.withOpacity(0.8),
-                  AppColors.appSecondaryColor.withOpacity(0.9),
+                  AppColors.appPrimaryColor.withValues(alpha: 0.8),
+                  AppColors.appSecondaryColor.withValues(alpha: 0.9),
                 ]
               : [
                   AppColors.appSecondaryColor,
-                  AppColors.appPrimaryColor.withOpacity(0.9),
+                  AppColors.appPrimaryColor.withValues(alpha: 0.9),
                   AppColors.appPrimaryColor,
                 ],
           begin: Alignment.topLeft,
@@ -147,7 +147,7 @@ class ProfileScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(28.0),
         boxShadow: [
           BoxShadow(
-            color: AppColors.appPrimaryColor.withOpacity(0.4),
+            color: AppColors.appPrimaryColor.withValues(alpha: 0.4),
             blurRadius: 20,
             offset: const Offset(0, 8),
             spreadRadius: -4,
@@ -181,12 +181,12 @@ class ProfileScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                       width: 2.5,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
+                        color: Colors.black.withValues(alpha: 0.2),
                         blurRadius: 12,
                         offset: const Offset(0, 4),
                       ),
@@ -213,7 +213,7 @@ class ProfileScreen extends StatelessWidget {
                       Text(
                         S.of(context).hey,
                         style: AppTextStyles.body2Style.copyWith(
-                          color: Colors.white.withOpacity(0.85),
+                          color: Colors.white.withValues(alpha: 0.85),
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                         ),
@@ -230,7 +230,7 @@ class ProfileScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           shadows: [
                             Shadow(
-                              color: Colors.black.withOpacity(0.2),
+                              color: Colors.black.withValues(alpha: 0.2),
                               offset: const Offset(0, 2),
                               blurRadius: 4,
                             ),
@@ -245,10 +245,10 @@ class ProfileScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
-                      color: Colors.white.withOpacity(0.3),
+                      color: Colors.white.withValues(alpha: 0.3),
                       width: 1,
                     ),
                   ),
@@ -272,7 +272,7 @@ class ProfileScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.08),
+            color: Colors.black.withValues(alpha: 0.08),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -295,8 +295,8 @@ class ProfileScreen extends StatelessWidget {
               TextStyle(fontFamily: 'Cairo', fontWeight: FontWeight.w600),
             ],
             inactiveBgColor: cubit.isDarkMode
-                ? AppColors.darkBorder.withOpacity(0.8)
-                : AppColors.lightBborder.withOpacity(0.9),
+                ? AppColors.darkBorder.withValues(alpha: 0.8)
+                : AppColors.lightBborder.withValues(alpha: 0.9),
             activeBgColor: [Components.setBgColor(cubit.isDarkMode)],
             activeFgColor: Colors.white,
             inactiveFgColor: cubit.isDarkMode ? Colors.white70 : Colors.black54,
@@ -317,12 +317,13 @@ class ProfileScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: cubit.isDarkMode
-            ? AppColors.darkBorder.withOpacity(0.6)
-            : Colors.white.withOpacity(0.85),
+            ? AppColors.darkBorder.withValues(alpha: 0.6)
+            : Colors.white.withValues(alpha: 0.85),
         borderRadius: BorderRadius.circular(24.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(cubit.isDarkMode ? 0.3 : 0.08),
+            color:
+                Colors.black.withValues(alpha: cubit.isDarkMode ? 0.3 : 0.08),
             blurRadius: 20,
             offset: const Offset(0, 8),
             spreadRadius: -4,
@@ -391,7 +392,8 @@ class ProfileScreen extends StatelessWidget {
               child: Switch(
                 value: cubit.isDarkMode,
                 activeThumbColor: AppColors.appPrimaryColor,
-                activeTrackColor: AppColors.appPrimaryColor.withOpacity(0.4),
+                activeTrackColor:
+                    AppColors.appPrimaryColor.withValues(alpha: 0.4),
                 inactiveThumbColor: Colors.grey.shade400,
                 inactiveTrackColor: Colors.grey.shade300,
                 thumbIcon: WidgetStateProperty.resolveWith((states) {
@@ -545,7 +547,8 @@ class ProfileScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: (iconColor ?? defaultIconColor).withOpacity(0.12),
+                  color:
+                      (iconColor ?? defaultIconColor).withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(
@@ -585,8 +588,9 @@ class ProfileScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Divider(
         height: 1,
-        color:
-            cubit.isDarkMode ? Colors.white10 : Colors.black.withOpacity(0.06),
+        color: cubit.isDarkMode
+            ? Colors.white10
+            : Colors.black.withValues(alpha: 0.06),
       ),
     );
   }
@@ -613,7 +617,7 @@ class ProfileScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(28.0),
             boxShadow: [
               BoxShadow(
-                color: AppColors.appPrimaryColor.withOpacity(0.4),
+                color: AppColors.appPrimaryColor.withValues(alpha: 0.4),
                 blurRadius: 20,
                 offset: const Offset(0, 10),
               ),
@@ -635,7 +639,7 @@ class ProfileScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         color: Components.setBgColor(cubit.isDarkMode)
-                            .withOpacity(0.12),
+                            .withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Icon(
@@ -705,10 +709,10 @@ class ProfileScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: isSelected
-                ? primaryColor.withOpacity(0.15)
+                ? primaryColor.withValues(alpha: 0.15)
                 : (cubit.isDarkMode
-                    ? Colors.white.withOpacity(0.05)
-                    : Colors.grey.withOpacity(0.08)),
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : Colors.grey.withValues(alpha: 0.08)),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
               color: isSelected ? primaryColor : Colors.transparent,
@@ -730,7 +734,7 @@ class ProfileScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(
-                      color: primaryColor.withOpacity(0.4),
+                      color: primaryColor.withValues(alpha: 0.4),
                       blurRadius: 8,
                       offset: const Offset(0, 4),
                     ),
@@ -860,13 +864,13 @@ class ProfileScreen extends StatelessWidget {
           padding: const EdgeInsets.all(14),
           decoration: BoxDecoration(
             color: cubit.isDarkMode
-                ? Colors.white.withOpacity(0.08)
-                : Colors.black.withOpacity(0.05),
+                ? Colors.white.withValues(alpha: 0.08)
+                : Colors.black.withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
               color: cubit.isDarkMode
                   ? Colors.white12
-                  : Colors.black.withOpacity(0.08),
+                  : Colors.black.withValues(alpha: 0.08),
               width: 1,
             ),
           ),

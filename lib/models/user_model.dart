@@ -2,7 +2,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hive/hive.dart';
 import 'package:karim_online_platform/models/std_quiz_model.dart';
-import 'package:karim_online_platform/models/user_purchase_model.dart';
 import 'package:karim_online_platform/models/user_purchased_chapter_model.dart';
 
 part 'user_model.g.dart';

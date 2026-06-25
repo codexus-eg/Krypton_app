@@ -1,7 +1,6 @@
 // ignore_for_file: use_build_context_synchronously, must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show FilteringTextInputFormatter;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:karim_online_platform/bloc/platform_cubit.dart';
@@ -10,10 +9,6 @@ import 'package:karim_online_platform/constants/colors.dart';
 import 'package:karim_online_platform/constants/components.dart';
 import 'package:karim_online_platform/constants/constants.dart';
 import 'package:karim_online_platform/constants/payment_options.dart';
-import 'package:karim_online_platform/models/video_details_model.dart';
-import 'package:karim_online_platform/screens/main/lectures_details_details_screen.dart';
-import 'package:karim_online_platform/screens/main/payment_webview_screen.dart';
-import 'package:karim_online_platform/screens/qrscanner/qr_scanner_screen.dart';
 import 'package:karim_online_platform/widgets/app_status_dialog.dart';
 
 import 'package:karim_online_platform/constants/widgets.dart';

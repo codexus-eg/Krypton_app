@@ -20,7 +20,7 @@
 /// 2. Create a new player class extending [BaseVideoPlayer]
 /// 3. Add URL detection logic in [VideoPlayerTypeExtension.fromUrl]
 /// 4. Add case in [VideoPlayerFactory.createPlayer]
-library video_players;
+library;
 
 export 'base_video_player.dart';
 export 'video_player_factory.dart';

@@ -11,7 +11,6 @@ import 'package:karim_online_platform/generated/l10n.dart';
 import 'package:karim_online_platform/screens/auth/login/login_page.dart';
 import 'package:karim_online_platform/screens/main/external_books_screen.dart';
 import 'package:karim_online_platform/screens/main/home_screen.dart';
-import 'package:karim_online_platform/screens/main/posts/posts_screen.dart';
 import 'package:karim_online_platform/screens/main/profile_screen.dart';
 import 'package:no_screenshot/no_screenshot.dart';
 

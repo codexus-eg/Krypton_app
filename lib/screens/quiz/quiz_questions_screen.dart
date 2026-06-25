@@ -204,7 +204,7 @@ class _QuizQuestionsScreenState extends State<QuizQuestionsScreen> {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.4 : 0.08),
+            color: Colors.black.withValues(alpha: isDark ? 0.4 : 0.08),
             blurRadius: 16.0,
             offset: const Offset(0, 6),
           ),
@@ -398,7 +398,8 @@ class _QuizQuestionsScreenState extends State<QuizQuestionsScreen> {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(cubit.isDarkMode ? 0.4 : 0.08),
+            color:
+                Colors.black.withValues(alpha: cubit.isDarkMode ? 0.4 : 0.08),
             blurRadius: 16.0,
             offset: const Offset(0, -6),
           ),
@@ -575,7 +576,7 @@ class _GradientButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(16.0),
             boxShadow: [
               BoxShadow(
-                color: AppColors.appPrimaryColor.withOpacity(0.35),
+                color: AppColors.appPrimaryColor.withValues(alpha: 0.35),
                 blurRadius: 12.0,
                 offset: const Offset(0, 4),
               ),

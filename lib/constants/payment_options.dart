@@ -443,7 +443,7 @@ class _AnimatedPaymentBottomSheetContentState
         padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 14.0),
         decoration: BoxDecoration(
           color: isSelected
-              ? option.color.withOpacity(widget.isDarkMode ? 0.18 : 0.08)
+              ? option.color.withValues(alpha: widget.isDarkMode ? 0.18 : 0.08)
               : (widget.isDarkMode ? Colors.black : Colors.white),
           borderRadius: BorderRadius.circular(16.0),
           border: Border.all(
@@ -462,7 +462,7 @@ class _AnimatedPaymentBottomSheetContentState
               width: 46,
               height: 46,
               decoration: BoxDecoration(
-                color: option.color.withOpacity(isSelected ? 0.22 : 0.12),
+                color: option.color.withValues(alpha: isSelected ? 0.22 : 0.12),
                 borderRadius: BorderRadius.circular(12.0),
               ),
               child: Icon(
@@ -805,7 +805,7 @@ class _FawryCodeSheetState extends State<FawryCodeSheet> {
             width: 64,
             height: 64,
             decoration: BoxDecoration(
-              color: _fawryColor.withOpacity(0.12),
+              color: _fawryColor.withValues(alpha: 0.12),
               shape: BoxShape.circle,
             ),
             child: const Icon(Icons.storefront_rounded,
@@ -825,9 +825,9 @@ class _FawryCodeSheetState extends State<FawryCodeSheet> {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 18.0, horizontal: 16),
             decoration: BoxDecoration(
-              color: _fawryColor.withOpacity(0.08),
+              color: _fawryColor.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(16.0),
-              border: Border.all(color: _fawryColor.withOpacity(0.4)),
+              border: Border.all(color: _fawryColor.withValues(alpha: 0.4)),
             ),
             child: Column(
               children: [
@@ -999,7 +999,7 @@ class PaymentMethodsSheet extends StatelessWidget {
                           width: 46,
                           height: 46,
                           decoration: BoxDecoration(
-                            color: visual.color.withOpacity(0.12),
+                            color: visual.color.withValues(alpha: 0.12),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child:

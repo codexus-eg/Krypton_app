@@ -6,7 +6,6 @@ import 'package:karim_online_platform/bloc/platform_cubit.dart';
 import 'package:karim_online_platform/bloc/platform_states.dart';
 import 'package:karim_online_platform/constants/colors.dart';
 import 'package:karim_online_platform/constants/components.dart';
-import 'package:karim_online_platform/constants/constants.dart';
 import 'package:karim_online_platform/constants/styles.dart';
 import 'package:karim_online_platform/constants/widgets.dart';
 import 'package:karim_online_platform/generated/l10n.dart';
