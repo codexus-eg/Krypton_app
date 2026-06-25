@@ -28,7 +28,6 @@ workflows:
           flutter clean
           flutter pub get
           cd ios
-          # أمر التنظيف الشامل
           pod deintegrate
           pod install --repo-update
 
@@ -37,7 +36,9 @@ workflows:
 
       - name: Build IPA
         script: |
-          xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner     xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner
+          # نستخدم أمر Flutter المباشر، ونخبره أن طريقة التصدير هي app-store
+          # كودماجيك سيقوم تلقائياً بإنشاء ملف export_options.plist المناسب للبروفايل
+          flutter build ipa --release --export-method app-store
 
     artifacts:
       - build/ios/ipa/*.ipa
