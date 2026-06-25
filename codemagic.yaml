@@ -23,11 +23,13 @@ workflows:
         script: |
           sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]*;/IPHONEOS_DEPLOYMENT_TARGET = 15.0;/g' ios/Runner.xcodeproj/project.pbxproj
 
-      - name: Clean and Get Dependencies
+      - name: Clean and Reinstall Pods
         script: |
           flutter clean
           flutter pub get
           cd ios
+          # أمر التنظيف الشامل
+          pod deintegrate
           pod install --repo-update
 
       - name: Apply Vault Profiles
@@ -35,8 +37,7 @@ workflows:
 
       - name: Build IPA
         script: |
-          # هنا التعديل: إضافة مسار الـ workspace
-          xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner
+          xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner     xcode-project build-ipa --workspace ios/Runner.xcworkspace --scheme Runner
 
     artifacts:
       - build/ios/ipa/*.ipa
