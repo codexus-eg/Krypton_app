@@ -3,29 +3,43 @@ workflows:
     name: Krypton iOS Build and Publish to TestFlight
     max_build_duration: 120
     instance_type: mac_mini_m2
+
     integrations:
       app_store_connect: noourway
+
     environment:
       flutter: stable
       xcode: latest
       cocoapods: default
+
       ios_signing:
         provisioning_profiles:
           - Krypton_Manual_Profile
         certificates:
           - ios_cert_manual
+
     scripts:
-      - name: Clean Environment
+      - name: Set iOS deployment target to 15.0
+        script: |
+          sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]*;/IPHONEOS_DEPLOYMENT_TARGET = 15.0;/g' ios/Runner.xcodeproj/project.pbxproj
+
+      - name: Clean and Get Dependencies
         script: |
           flutter clean
           flutter pub get
-          rm -rf ios/Pods
-          rm -rf ios/Podfile.lock
+          cd ios
+          pod install --repo-update
+
+      - name: Apply Vault Profiles
+        script: xcode-project use-profiles
+
       - name: Build IPA
         script: |
-          flutter build ipa --release --export-options-plist=/Users/builder/export_options.plist
+          flutter build ipa --release
+
     artifacts:
       - build/ios/ipa/*.ipa
+
     publishing:
       app_store_connect:
         auth: integration
