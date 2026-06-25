@@ -35,8 +35,8 @@ workflows:
 
       - name: Build IPA
         script: |
-          # نحدد هنا --export-method app-store لضمان التوافق مع التست فلاي
-          flutter build ipa --release --export-method app-store
+          # نستخدم أمر كودماجيك الخاص لبناء الـ IPA، وهو أكثر دقة في تطبيق الـ Provisioning Profiles
+          xcode-project build-ipa --target Runner --scheme Runner
 
     artifacts:
       - build/ios/ipa/*.ipa
