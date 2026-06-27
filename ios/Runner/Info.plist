@@ -62,4 +62,12 @@
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<true/>
 </dict>
+<key>NSCameraUsageDescription</key>
+	<string>نحتاج إلى صلاحية استخدام الكاميرا لتتمكن من التقاط صورتك الشخصية أو تصوير الأسئلة وإرفاقها في طلبات الدعم الفني.</string>
+	
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>نحتاج إلى صلاحية الوصول لمعرض الصور لتتمكن من اختيار صورتك الشخصية وإرفاق الصور من جهازك.</string>
+	
+	<key>NSMicrophoneUsageDescription</key>
+	<string>نحتاج إلى صلاحية استخدام المايكروفون لتتمكن من تسجيل وإرسال الملاحظات الصوتية في المحادثات.</string>
 </plist>
