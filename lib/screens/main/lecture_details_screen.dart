@@ -2,17 +2,14 @@
 
 import 'dart:ui';
 
-import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:karim_online_platform/bloc/platform_cubit.dart';
 import 'package:karim_online_platform/bloc/platform_states.dart';
 import 'package:karim_online_platform/constants/components.dart';
-import 'package:karim_online_platform/constants/constants.dart';
 import 'package:karim_online_platform/constants/payment_options.dart';
 import 'package:karim_online_platform/constants/widgets.dart';
 import 'package:karim_online_platform/generated/l10n.dart';
-import 'package:karim_online_platform/models/video_details_model.dart';
 import 'package:karim_online_platform/screens/main/lectures_details_details_screen.dart';
 import 'package:karim_online_platform/widgets/app_status_dialog.dart';
 

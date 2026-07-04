@@ -509,45 +509,70 @@ class PlatformCubit extends Cubit<PlatformStates> {
   }
 
   Future<void> manageUserTopics({String? oldGroupId}) async {
-    UserModel um = Constants.userBox.get('user');
+    if (Platform.isWindows) return;
 
-    String enhGroupId = um.groupId!.isEmpty ? 'online' : um.groupId!;
-    debugPrint('enhGroupId: $enhGroupId');
-
-    if (oldGroupId != null) {
-      String enhOldGroupId = oldGroupId.isEmpty ? 'online' : oldGroupId;
-
-      //remove previous group's topic
-      if (enhOldGroupId != enhGroupId) {
-        debugPrint('enhOldGroupId: $enhOldGroupId');
-
-        await FirebaseMessaging.instance.unsubscribeFromTopic(enhOldGroupId);
-        await FirebaseMessaging.instance
-            .unsubscribeFromTopic('${um.grade}_${enhOldGroupId}_lectures');
-        debugPrint('removed');
-      }
+    // على iOS يفشل subscribeToTopic بخطأ [firebase_messaging/apns-token-not-set]
+    // إن استُدعي قبل وصول الـ APNs token. ننتظر توفّره أولًا، وإن لم يصل نتجاوز
+    // (سيُعاد ضبط المواضيع لاحقًا عبر setLocalData عند توفّر الـ token).
+    if (!await NotificationService.ensureApnsToken()) {
+      debugPrint('manageUserTopics: APNs token not ready yet — skipping.');
+      return;
     }
 
-    //add new group's topic
-    await FirebaseMessaging.instance.subscribeToTopic(um.grade!);
-    await FirebaseMessaging.instance
-        .subscribeToTopic('${um.grade}_$enhGroupId');
-    await FirebaseMessaging.instance.subscribeToTopic('${um.grade}_exams');
-    await FirebaseMessaging.instance.subscribeToTopic(
-        '${um.grade}_${enhGroupId == 'online' ? 'online' : 'center'}_lectures');
-    debugPrint('added');
+    try {
+      UserModel um = Constants.userBox.get('user');
+
+      String enhGroupId = um.groupId!.isEmpty ? 'online' : um.groupId!;
+      debugPrint('enhGroupId: $enhGroupId');
+
+      if (oldGroupId != null) {
+        String enhOldGroupId = oldGroupId.isEmpty ? 'online' : oldGroupId;
+
+        //remove previous group's topic
+        if (enhOldGroupId != enhGroupId) {
+          debugPrint('enhOldGroupId: $enhOldGroupId');
+
+          await FirebaseMessaging.instance.unsubscribeFromTopic(enhOldGroupId);
+          await FirebaseMessaging.instance
+              .unsubscribeFromTopic('${um.grade}_${enhOldGroupId}_lectures');
+          debugPrint('removed');
+        }
+      }
+
+      //add new group's topic
+      await FirebaseMessaging.instance.subscribeToTopic(um.grade!);
+      await FirebaseMessaging.instance
+          .subscribeToTopic('${um.grade}_$enhGroupId');
+      await FirebaseMessaging.instance.subscribeToTopic('${um.grade}_exams');
+      await FirebaseMessaging.instance.subscribeToTopic(
+          '${um.grade}_${enhGroupId == 'online' ? 'online' : 'center'}_lectures');
+      debugPrint('added');
+    } catch (e) {
+      debugPrint('manageUserTopics error: $e');
+    }
   }
 
   Future<void> removeUserTopics() async {
-    UserModel um = Constants.userBox.get('user');
-    String enhGroupId = um.groupId!.isEmpty ? 'online' : um.groupId!;
+    if (Platform.isWindows) return;
+    if (!await NotificationService.ensureApnsToken()) {
+      debugPrint('removeUserTopics: APNs token not ready yet — skipping.');
+      return;
+    }
 
-    await FirebaseMessaging.instance.unsubscribeFromTopic(um.grade!);
-    await FirebaseMessaging.instance
-        .unsubscribeFromTopic('${um.grade}_$enhGroupId');
-    await FirebaseMessaging.instance.unsubscribeFromTopic('${um.grade}_exams');
-    await FirebaseMessaging.instance.unsubscribeFromTopic(
-        '${um.grade}_${enhGroupId == 'online' ? 'online' : 'center'}_lectures');
+    try {
+      UserModel um = Constants.userBox.get('user');
+      String enhGroupId = um.groupId!.isEmpty ? 'online' : um.groupId!;
+
+      await FirebaseMessaging.instance.unsubscribeFromTopic(um.grade!);
+      await FirebaseMessaging.instance
+          .unsubscribeFromTopic('${um.grade}_$enhGroupId');
+      await FirebaseMessaging.instance
+          .unsubscribeFromTopic('${um.grade}_exams');
+      await FirebaseMessaging.instance.unsubscribeFromTopic(
+          '${um.grade}_${enhGroupId == 'online' ? 'online' : 'center'}_lectures');
+    } catch (e) {
+      debugPrint('removeUserTopics error: $e');
+    }
   }
 
 /*

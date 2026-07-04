@@ -10,9 +10,7 @@ import 'package:karim_online_platform/constants/constants.dart';
 import 'package:karim_online_platform/constants/styles.dart';
 import 'package:karim_online_platform/constants/widgets.dart';
 import 'package:karim_online_platform/generated/l10n.dart';
-import 'package:karim_online_platform/models/RequsetsModel.dart';
 import 'package:karim_online_platform/models/purchases_widget_data.dart';
-import 'package:karim_online_platform/models/video_details_model.dart';
 import 'package:karim_online_platform/models/viedo_model.dart';
 import 'package:karim_online_platform/network/local/shared_pref_helper.dart';
 import 'package:karim_online_platform/screens/auth/login/login_page.dart';
@@ -20,17 +18,13 @@ import 'package:karim_online_platform/screens/main/edit_profile_screen.dart';
 import 'package:karim_online_platform/screens/main/error_screen.dart';
 import 'package:karim_online_platform/screens/main/lecture_details_screen.dart';
 import 'package:karim_online_platform/screens/main/lectures_details_details_screen.dart';
-import 'package:karim_online_platform/screens/main/revision_screen.dart.dart';
 import 'package:karim_online_platform/screens/main/my_code_screen.dart';
 import 'package:karim_online_platform/screens/main/my_lectures_screen.dart';
 import 'package:karim_online_platform/screens/main/posts/posts_screen.dart';
 import 'package:karim_online_platform/screens/main/requests.dart';
 import 'package:karim_online_platform/screens/main/wallet/wallet_screen.dart';
-import 'package:karim_online_platform/screens/main/ytp_screen.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../models/user_model.dart';
-import 'Chat2.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

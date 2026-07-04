@@ -248,25 +248,38 @@ class NotificationService {
   // إدارة الـ Token
   // ---------------------------------------------------------------------------
 
+  /// ينتظر توفّر الـ APNs token على iOS/macOS قبل تنفيذ أي عملية FCM
+  /// (getToken / subscribeToTopic ...) لأنها تفشل بخطأ
+  /// [firebase_messaging/apns-token-not-set] إن استُدعيت قبل وصول الـ token.
+  /// يرجع true إن كان جاهزًا (أو على منصّة لا تحتاجه)، وإلا false.
+  static Future<bool> ensureApnsToken({int maxRetries = 2}) async {
+    if (!(Platform.isIOS || Platform.isMacOS)) return true;
+    try {
+      String? apnsToken = await _messaging.getAPNSToken();
+      int retries = 0;
+      while (apnsToken == null && retries < maxRetries) {
+        await Future.delayed(const Duration(seconds: 1));
+        apnsToken = await _messaging.getAPNSToken();
+        retries++;
+      }
+      if (apnsToken == null) {
+        debugPrint(
+            'APNs token غير متوفّر بعد — سيُؤجَّل حفظ الـ token/الاشتراك بالمواضيع.');
+        return false;
+      }
+      return true;
+    } catch (e) {
+      debugPrint('ensureApnsToken error: $e');
+      return false;
+    }
+  }
+
   /// جلب الـ FCM token الحالي.
   static Future<String?> getToken() async {
     try {
       // على iOS لا يتوفّر الـ FCM token قبل أن يصل الـ APNs token من النظام،
       // وإلا فإن getToken() يرجع null. لذلك ننتظر توفّره أولًا مع إعادة محاولة.
-      if (Platform.isIOS || Platform.isMacOS) {
-        String? apnsToken = await _messaging.getAPNSToken();
-        int retries = 0;
-        while (apnsToken == null && retries < 6) {
-          await Future.delayed(const Duration(seconds: 1));
-          apnsToken = await _messaging.getAPNSToken();
-          retries++;
-        }
-        if (apnsToken == null) {
-          debugPrint(
-              'APNs token غير متوفّر بعد — سيُحفظ الـ pushToken لاحقًا عبر onTokenRefresh.');
-          return null;
-        }
-      }
+      if (!await ensureApnsToken()) return null;
       return await _messaging.getToken();
     } catch (e) {
       debugPrint('Failed to get FCM token: $e');

@@ -9,7 +9,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:karim_online_platform/constants/constants.dart';
-import 'package:karim_online_platform/models/payment_model.dart';
 import 'package:karim_online_platform/screens/main/Overlay.dart';
 
 import 'package:karim_online_platform/bloc/platform_cubit.dart';
@@ -17,9 +16,6 @@ import 'package:karim_online_platform/bloc/platform_states.dart';
 import 'package:karim_online_platform/constants/colors.dart';
 import 'package:karim_online_platform/constants/styles.dart';
 import 'package:karim_online_platform/generated/l10n.dart';
-import 'package:karim_online_platform/screens/main/payment_webview_screen.dart';
-import 'package:karim_online_platform/screens/qrscanner/qr_scanner_screen.dart';
-import 'package:karim_online_platform/widgets/app_status_dialog.dart';
 
 import '../models/RequsetsModel.dart';
 import '../models/question_model.dart';

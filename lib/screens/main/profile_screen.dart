@@ -19,7 +19,6 @@ import 'package:toggle_switch/toggle_switch.dart';
 
 import '../../constants/styles.dart';
 import '../../constants/widgets.dart';
-import '../../models/user_model.dart';
 import '../auth/change_pass/change_pass_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
