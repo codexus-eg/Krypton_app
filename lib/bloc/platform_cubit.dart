@@ -2953,7 +2953,6 @@ class PlatformCubit extends Cubit<PlatformStates> {
     required bool isInQuizScreen,
     String? lecId,
   }) {
-    debugPrint(quizModel!.title);
     quizQuestions = [];
     emit(PlatformQuizGetQuizesLoadingState());
     UserModel um = Constants.userBox.get('user');
